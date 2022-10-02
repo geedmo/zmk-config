@@ -18,18 +18,16 @@
 #define NAVFN 2
 #define CONFIG 3
 
-#define XXX &none
-#define ___ &trans
+#define XXXXX &none
+#define _____ &trans
 
+// Home row mods macros
 #define MALT(k) &hrm LALT k
 #define MSFT(k) &hrm LSHFT k
 #define MCTL(k) &hrm LCTRL k
 #define MGUI(k) &hrm LGUI k
-
-#define LCS &mt LC(LSHFT) Q
-#define LCA &mt LC(LALT) X
-#define RCA &mt LC(LALT) DOT
-#define RCS &mt LC(LSHFT) Z
+#define MCS(k) &mt LC(LSHFT) k
+#define MCA(k) &mt LC(LALT) k
 
 // combos
 //#undef COMBO_TERM
@@ -73,13 +71,13 @@ ZMK_COMBO(combo_del,   &kp DEL, LT2 LT3, ALL)
 //                     | RET      | NAV(SPC) |   | SYM(BSPC) | CONF(ESC) |
                         bindings = <
      // ╭──────────────────┬────────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────────┬────────────────╮
-          XXX                MALT(W)          &kp E         &kp R         &kp T         &kp Y         &kp U         &kp I         MALT(O)            XXX  
+          XXXXX              MALT(W)          &kp E         &kp R         &kp T         &kp Y         &kp U         &kp I         MALT(O)            XXXXX  
      // ├──────────────────┼────────────────┼─────────────┼─────────────┼─────────────┤─────────────┼─────────────┼─────────────┼──────────────────┼────────────────┤
           MSFT(A)            &kp S            &kp D         MCTL(F)       &kp G         &kp H         MCTL(J)       &kp K         &kp L              MSFT(P)
      // ├──────────────────┼────────────────┼─────────────┼─────────────┼─────────────┤─────────────┼─────────────┼─────────────┼──────────────────┼────────────────┤
-          LCS                LCA              &kp C         MGUI(V)       &kp B         &kp N         MGUI(M)       &kp COMMA     RCA                RCS 
+          MCS(Q)             MCA(X)           &kp C         MGUI(V)       &kp B         &kp N         MGUI(M)       &kp COMMA     MCA(DOT)           MCS(Z) 
      // ╰──────────────────┴────────────────┴─────────────┼─────────────┼─────────────┤─────────────┼─────────────┼─────────────┴──────────────────┴────────────────╯
-                                                            &lt NAVFN RET XXX           XXX           &lt CONFIG SPACE
+                                                            &lt NAVFN RET XXXXX         XXXXX         &lt CONFIG SPACE
      //                                                   ╰─────────────┴─────────────┴─────────────┴─────────────╯
 
 
