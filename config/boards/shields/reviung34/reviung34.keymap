@@ -19,15 +19,15 @@
 #define CONFIG 3
 // #define _LOWER 3
 // #define _RAISE 4
-#define _FUN 5
-#define _NUMPAD 6
-#define _NUMWORD 7
-#define _MEDIA 8
-#define _MOUSE 9
-#define _GAME 10
-#define _WNAV 11
-#define _EMAILS 12
-#define _ADJUST 13
+#define FUN 5
+#define NUMPAD 6
+#define NUMWORD 7
+#define MEDIA 8
+#define MOUSE 9
+#define GAME 10
+#define WNAV 11
+#define EMAILS 12
+#define ADJUST 13
 
 #define XXXXXXX &none
 #define _______ &trans
@@ -63,7 +63,7 @@ ZMK_BEHAVIOR(td_cbrace, tap_dance,
     bindings = <&kp LBRC>, <&kp RBRC>;
 )
 
-/ {    
+/ {
     macros {
             ZMK_MACRO(save,
               wait-ms = <30>;
@@ -90,19 +90,19 @@ ZMK_BEHAVIOR(td_cbrace, tap_dance,
 
                 default_layer {
                         bindings = <
-    XXXXXXX    MALT(W)    &kp E      &kp R        &kp T     &kp Y     &kp U            &kp I      MALT(O)    XXXXXXX  
+    XXXXXXX    MALT(W)    &kp E      &kp R        &kp T     &kp Y     &kp U            &kp I      MALT(O)    XXXXXXX
     MSFT(A)    &kp S      &kp D      MCTL(F)      &kp G     &kp H     MCTL(J)          &kp K      &kp L      MSFT(P)
-    MCS(Q)     MCA(X)     &kp C      MGUI(V)      &kp B     &kp N     MGUI(M)          &kp COMMA  MCA(DOT)   MCS(Z) 
-                                    &lt NAV RET  XXXXXXX   XXXXXXX   &lt CONFIG SPACE
+    MCS(Q)     MCA(X)     &kp C      MGUI(V)      &kp B     &kp N     MGUI(M)          &kp COMMA  MCA(DOT)   MCS(Z)
+                                     &lt NAV RET  XXXXXXX   XXXXXXX   &lt CONFIG SPACE
                         >;
                 };
 
                 sym_layer {
                         bindings = <
-    _______    &kc AT     &kc HASH   &kc DLR    &kc PRCNT  &kc CARET  &kc AMPS   &kc ASTRK  &td_parens   _______  
-    &kc GRAVE  &kc DQT    _______    &kc EXCL   _______    _______    &kc MINUS  &kc EQUAL  &td_cbrace   &kc SEMI  
-    &kc TILDE  &kc SQT    &kc BSLH   &kc PIPE   &sl MEDIA  &sl FUN    &kc UNDER  &kc PLUS   &td_bracket  &kc FSLH  
-                                    _______    _______    _______    _______
+    _______    &kc AT     &kc HASH   &kc DLR    &kc PRCNT  &kc CARET  &kc AMPS   &kc ASTRK  &td_parens   _______
+    &kc GRAVE  &kc DQT    _______    &kc EXCL   _______    _______    &kc MINUS  &kc EQUAL  &td_cbrace   &kc SEMI
+    &kc TILDE  &kc SQT    &kc BSLH   &kc PIPE   &sl MEDIA  &sl FUN    &kc UNDER  &kc PLUS   &td_bracket  &kc FSLH
+                                     _______    _______    _______    _______
                         >;
                 };
 
@@ -132,7 +132,7 @@ ZMK_BEHAVIOR(td_cbrace, tap_dance,
                         &trans  &trans &kp DEL &caps_word
                         >;
                 };
-               
+
                 config_layer {
 // -----------------------------------------------------------------------------------------
 // | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ |    | BT1  | BT2 | BT3 | BT4 |
@@ -140,9 +140,9 @@ ZMK_BEHAVIOR(td_cbrace, tap_dance,
 // |          |          |          | RGB TOG  |    | BT CLR |     |     | RESET     |
 //                                             |     |     |     |     |     |
                         bindings = <
-   &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  
-   &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none &none &bt BT_SEL 4 &bt BT_NXT &bt BT_PRV        &none     
-   &none           &none           &none           &rgb_ug RGB_TOG &none &none &bt BT_CLR   &none &out OUT_TOG        &reset   
+   &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+   &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none &none &bt BT_SEL 4 &bt BT_NXT &bt BT_PRV        &none
+   &none           &none           &none           &rgb_ug RGB_TOG &none &none &bt BT_CLR   &none &out OUT_TOG        &reset
                                                              &kp CAPS      &trans               &trans      &trans
                         >;
                 };
