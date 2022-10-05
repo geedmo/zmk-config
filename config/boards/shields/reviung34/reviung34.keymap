@@ -146,7 +146,7 @@ ZMK_BEHAVIOR(td_dotcom, tap_dance,
     _______    _______   _______   _______   _______   &kp KP_NUMLOCK    &kp KP_N7  &kp KP_N8  &kp KP_N9  _______ 
     _______    _______   _______   _______   _______   &kp KP_PLUS       &kp KP_N4  &kp KP_N5  &kp KP_N6  &td_dotcom 
     &mo NUMPAD _______   _______   _______   _______   &kp KP_ASTERISK   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp FSLH 
-                                   CANCEL    XXXXXXX    XXXXXXX          &kp KP_0
+                                   CANCEL    XXXXXXX    XXXXXXX          &kp KP_N0
                         >;
                 };
 
