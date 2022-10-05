@@ -13,13 +13,26 @@
 #include "../../../zmk-nodefree-config/keypos_def/keypos_34keys.h"
 #include "../../../zmk-nodefree-config/helper.h"
 
-#define DEFAULT 0
-#define SYMNUM 1
-#define NAVFN 2
-#define CONFIG 3
+#define SPC SPACE
 
-#define XXXXX &none
-#define _____ &trans
+#define DEFAULT 0
+#define SYM 1
+#define NAV 2
+#define CONFIG 3
+// #define _LOWER 3
+// #define _RAISE 4
+#define _FUN 5
+#define _NUMPAD 6
+#define _NUMWORD 7
+#define _MEDIA 8
+#define _MOUSE 9
+#define _GAME 10
+#define _WNAV 11
+#define _EMAILS 12
+#define _ADJUST 13
+
+#define XXXXXXX &none
+#define _______ &trans
 
 // Home row mods macros
 #define MALT(k) &hrm LALT k
@@ -37,6 +50,20 @@ ZMK_COMBO(combo_del,   &kp DEL, LT2 LT3, ALL)
 //ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)
 //ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)
 
+
+// tap dance
+ZMK_BEHAVIOR(td_parens, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LPAR>, <&kp RPAR>;
+)
+ZMK_BEHAVIOR(td_bracket, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LBKT>, <&kp RBKT>;
+)
+ZMK_BEHAVIOR(td_cbrace, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LBRC>, <&kp RBRC>;
+)
 
 / {    
     macros {
@@ -64,46 +91,42 @@ ZMK_COMBO(combo_del,   &kp DEL, LT2 LT3, ALL)
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -------------------------------------------------------------------------------------------
-// |  B      |  Y      |  O       |  U       |   |  L        |  D        |  W      |  V      | 
-// | LGUI(C) | LALT(I) | LSHFT(E) | LCTRL(A) |   | RCTRL(H)  | RSHFT(T)  | RALT(S) | RGUI(N) |
-// | G       | X       | J        | K        |   | R         | M         | F       | P       |
-//                     | RET      | NAV(SPC) |   | SYM(BSPC) | CONF(ESC) |
                         bindings = <
-     // ╭──────────────────┬────────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────────┬────────────────╮
-          XXXXX              MALT(W)          &kp E         &kp R         &kp T         &kp Y         &kp U         &kp I         MALT(O)            XXXXX  
-     // ├──────────────────┼────────────────┼─────────────┼─────────────┼─────────────┤─────────────┼─────────────┼─────────────┼──────────────────┼────────────────┤
-          MSFT(A)            &kp S            &kp D         MCTL(F)       &kp G         &kp H         MCTL(J)       &kp K         &kp L              MSFT(P)
-     // ├──────────────────┼────────────────┼─────────────┼─────────────┼─────────────┤─────────────┼─────────────┼─────────────┼──────────────────┼────────────────┤
-          MCS(Q)             MCA(X)           &kp C         MGUI(V)       &kp B         &kp N         MGUI(M)       &kp COMMA     MCA(DOT)           MCS(Z) 
-     // ╰──────────────────┴────────────────┴─────────────┼─────────────┼─────────────┤─────────────┼─────────────┼─────────────┴──────────────────┴────────────────╯
-                                                            &lt NAVFN RET XXXXX         XXXXX         &lt CONFIG SPACE
-     //                                                   ╰─────────────┴─────────────┴─────────────┴─────────────╯
-
-
+    XXXXXXX    MALT(W)    &kp E      &kp R        &kp T     &kp Y     &kp U            &kp I      MALT(O)    XXXXXXX  
+    MSFT(A)    &kp S      &kp D      MCTL(F)      &kp G     &kp H     MCTL(J)          &kp K      &kp L      MSFT(P)
+    MCS(Q)     MCA(X)     &kp C      MGUI(V)      &kp B     &kp N     MGUI(M)          &kp COMMA  MCA(DOT)   MCS(Z) 
+                                    &lt NAV RET  XXXXXXX   XXXXXXX   &lt CONFIG SPC
                         >;
                 };
 
-                symnum_layer {
-// -------------------------------------------------------------------------------------------
-// |         |  `      |  \       |  /       |   |  1        |  2        |  3      |  4      | 
-// | LGUI(') | LALT(-) | LSHFT(,) | LCTRL(.) |   | RCTRL(5)  | RSHFT(6)  | RALT(7) | RGUI(8) |
-// | =       | ;       | [        | ]        |   | 9         | 0         | Z       | Q       |
-//                     | SAVE     | TAB      |   |           |           |
+                sym_layer {
                         bindings = <
-   &none      &kp GRAVE  &kp BSLH    &kp FSLH    &none &none &kp N1        &kp N2      &kp N3      &kp N4
-   &hrm LGUI SQT &hrm LALT MINUS &hrm LSHFT COMMA &hrm LCTRL DOT &none &none &hrm RCTRL N5   &hrm RSHFT N6 &hrm RALT N7  &hrm RGUI N8
-   &kp EQUAL      &kp SEMI      &kp LBKT       &kp RBKT       &none &none &kp N9         &kp N0       &kp Z       &kp Q
-                        &save  &mt LSHFT TAB &trans &none
+    _______    &kc AT     &kc HASH   &kc DLR    &kc PRCNT  &kc CARET  &kc AMPS   &kc ASTRK  &td_parens   _______  
+    &kc GRAVE  &kc DQT    _______    &kc EXCL   _______    _______    &kc MINUS  &kc EQUAL  &td_cbrace   &kc SEMI  
+    &kc TILDE  &kc SQT    &kc BSLH   &kc PIPE   &sl MEDIA  &sl FUN    &kc UNDER  &kc PLUS   &td_bracket  &kc FSLH  
+                                    _______    _______    _______    _______
                         >;
                 };
-                
-                navfn_layer {
-// -------------------------------------------------------------------------------------------
-// |         |         |          |          |   | F1        | F2        | F3      | F4      | 
-// | LGUI(LFT) | LALT(DWN) | LSHFT(UP) | LCTRL(RGT) |   | RCTRL(F5)  | RSHFT(F6)  | RALT(F7) | RGUI(F8) |
-// | HOME       | PGDN       | PGUP        | END        |   | F9         | F10         | F11       | F12       |
-//                     |          |          |   | DEL       |           |
+
+                media_layer {
+                        bindings = <
+    _______    _______    _______    _______    _______    _______    _______    _______    _______    _______
+    _______    _______    _______    _______    _______    _______    _______    _______    _______    _______
+    _______    _______    _______    _______    _______    _______    _______    _______    _______    _______
+                                     _______    _______    _______    _______
+                        >;
+                };
+
+                fun_layer {
+                        bindings = <
+    _______    _______    _______    _______    _______    _______    _______    _______    _______    _______
+    _______    _______    _______    _______    _______    _______    _______    _______    _______    _______
+    _______    _______    _______    _______    _______    _______    _______    _______    _______    _______
+                                     _______    _______    _______    _______
+                        >;
+                };
+
+                nav_layer {
                         bindings = <
    &none      &none  &none    &none    &none &none &kp F1        &kp F2      &kp F3      &kp F4
    &hrm LGUI LEFT &hrm LALT DOWN &hrm LSHFT UP &hrm LCTRL RIGHT &none &none &hrm RCTRL F5   &hrm RSHFT F6 &hrm RALT F7  &hrm RGUI F8
@@ -117,7 +140,7 @@ ZMK_COMBO(combo_del,   &kp DEL, LT2 LT3, ALL)
 // | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ |    | BT1  | BT2 | BT3 | BT4 |
 // | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI+ |    | BT5   |       |     |     |
 // |          |          |          | RGB TOG  |    | BT CLR |     |     | RESET     |
-//                                              |     |     |     |     |     |
+//                                             |     |     |     |     |     |
                         bindings = <
    &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  
    &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none &none &bt BT_SEL 4 &bt BT_NXT &bt BT_PRV        &none     
