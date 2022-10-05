@@ -42,9 +42,6 @@
 
 #define CANCEL &mo DEFAULT
 
-#define A(kc) &kp LA(kc)
-#define G(kc) &kp LG(kc)
-
 // combos
 //#undef COMBO_TERM
 //#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
@@ -135,9 +132,9 @@ ZMK_BEHAVIOR(td_dotcom, tap_dance,
 
                 nav_layer {
                         bindings = <
-    _______    &kp PG_DN  &kp UP     &kp PG_UP  _______    _______    /* SC_TAB */_______    _______  /* C_TAB */_______      _______  
-    &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  _______  
-    &mo NAV    _______    _______    _______    _______    &kp INS    &kp HOME   &kp PG_DN  &kp PG_UP  &kp END   
+    _______    &kp PG_DN  &kp UP     &kp PG_UP  _______    _______    /* SC_TAB */_______    _______  /* C_TAB */_______      _______
+    &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  _______
+    &mo NAV    _______    _______    _______    _______    &kp INS    &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
                                      CANCEL     XXXXXXX    XXXXXXX    _______
                            >;
                 };
@@ -146,19 +143,19 @@ ZMK_BEHAVIOR(td_dotcom, tap_dance,
 
                numpad_layer  {
                         bindings = <
-    _______    _______   _______   _______   _______   &kp KP_NUMLOCK    &kp KP_N7  &kp KP_N8  &kp KP_N9  _______ 
-    _______    _______   _______   _______   _______   &kp KP_PLUS       &kp KP_N4  &kp KP_N5  &kp KP_N6  &td_dotcom 
-    &mo NUMPAD _______   _______   _______   _______   &kp KP_ASTERISK   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp FSLH 
+    _______    _______   _______   _______   _______   &kp KP_NUMLOCK    &kp KP_N7  &kp KP_N8  &kp KP_N9  _______
+    _______    _______   _______   _______   _______   &kp KP_PLUS       &kp KP_N4  &kp KP_N5  &kp KP_N6  &td_dotcom
+    &mo NUMPAD _______   _______   _______   _______   &kp KP_ASTERISK   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp FSLH
                                    CANCEL    XXXXXXX    XXXXXXX          &kp KP_N0
                         >;
                 };
 
                wnav_layer  {
                         bindings = <
-    _______    A(TAB)     G(TAB)     _______    _______    G(LEFT)    G(DOWN)    G(UP)      G(RIGHT)   _______    
-    G(N6)      G(N4)      G(N0)      G(N2)      _______    _______    G(N3)      G(N1)      G(N5)      G(N7)       
-    _______    _______    _______    G(N8)      _______    _______    G(N9)      _______    _______    _______    
-                                     CANCEL     XXXXXXX    XXXXXXX    _______
+    _______    &kp LA(TAB)    &kp LG(TAB)  _______    _______    &kp LG(LEFT) &kp LG(DOWN) &kp LG(UP) &kp LG(RIGHT) _______
+    &kp LG(N6) &kp LG(N4)     &kp LG(N0)   &kp LG(N2) _______    _______      &kp LG(N3)   &kp LG(N1) &kp LG(N5)    &kp LG(N7)
+    _______    _______        _______      &kp LG(N8) _______    _______      &kp LG(N9)   _______    _______       _______
+                                           CANCEL     XXXXXXX    XXXXXXX      _______
                             >;
                 };
 
