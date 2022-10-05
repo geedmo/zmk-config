@@ -42,8 +42,8 @@
 
 #define CANCEL &mo DEFAULT
 
-#define LA(kc) &kp LA(kc)
-#define LG(kc) &kp LG(kc)
+#define A(kc) &kp LA(kc)
+#define G(kc) &kp LG(kc)
 
 // combos
 //#undef COMBO_TERM
@@ -155,9 +155,9 @@ ZMK_BEHAVIOR(td_dotcom, tap_dance,
 
                wnav_layer  {
                         bindings = <
-    _______    LA(TAB)    LG(TAB)    _______    _______    LG(LEFT)   LG(DOWN)   LG(UP)     LG(RIGHT)  _______    
-    LG(N6)     LG(N4)     LG(N0)     LG(N2)     _______    _______    LG(N3)     LG(N1)     LG(N5)     LG(N7)      
-    _______    _______    _______    LG(N8)     _______    _______    LG(N9)     _______    _______    _______    
+    _______    A(TAB)     G(TAB)     _______    _______    G(LEFT)    G(DOWN)    G(UP)      G(RIGHT)   _______    
+    G(N6)      G(N4)      G(N0)      G(N2)      _______    _______    G(N3)      G(N1)      G(N5)      G(N7)       
+    _______    _______    _______    G(N8)      _______    _______    G(N9)      _______    _______    _______    
                                      CANCEL     XXXXXXX    XXXXXXX    _______
                             >;
                 };
