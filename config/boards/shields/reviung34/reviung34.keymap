@@ -69,7 +69,7 @@ ZMK_BEHAVIOR(td_dotcom, tap_dance,
     bindings = <&kp DOT>, <&kp COMMA>;
 )
 // send string macros
-ZMK_MACRO(ss_mailp,
+ZMK_BEHAVIOR(ss_mailp, macro,
     wait-ms = <30>;
     tap-ms = <40>;
     bindings = <&kp M &kp O &kp R &kp A &kp L &kp E &kp S &kp DOT &kp G &kp E &kp R &kp M &kp A &kp N &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M >;
