@@ -13,11 +13,11 @@
 //#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
 
 // cancel all / reset to base layer
-COMB(C_cancel,           CANCEL,    RB4     RM4)
+COMB(C_cancel,           &kp CANCEL,    RB4     RM4)
 
 // hyper - meh
-COMB(C_hyper,            HYPR,      LM4     LM3)
-COMB(C_meh,              MEH,       RM3     RM4)
+COMB(C_hyper,            &kp HYPR,      LM4     LM3)
+COMB(C_meh,              &kp MEH,       RM3     RM4)
 
 // Text control
 COMB(C_bspc,             &kp BSPC,  RT2 RT3)
