@@ -93,7 +93,7 @@ ZMK_BEHAVIOR(td_cbrace, tap_dance,
     XXXXXXX    MALT(W)    &kp E      &kp R        &kp T     &kp Y     &kp U            &kp I      MALT(O)    XXXXXXX
     MSFT(A)    &kp S      &kp D      MCTL(F)      &kp G     &kp H     MCTL(J)          &kp K      &kp L      MSFT(P)
     MCS(Q)     MCA(X)     &kp C      MGUI(V)      &kp B     &kp N     MGUI(M)          &kp COMMA  MCA(DOT)   MCS(Z)
-                                     &lt NAV RET  XXXXXXX   XXXXXXX   &lt CONFIG SPACE
+                                     &sl SYM      XXXXXXX   XXXXXXX   &lt NAV SPACE
                         >;
                 };
 
