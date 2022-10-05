@@ -136,7 +136,6 @@
                 #binding-cells = <0>; \
                 bindings = <uc_binding>, <shifted_uc_binding>; \
                 mods = <(MOD_LSFT|MOD_RSFT)>; \
-                /* masked_mods = <(MOD_LSFT|MOD_RSFT)>;  // requires PR #1114  */
             }; \
         }; \
     };
@@ -149,3 +148,4 @@
     UC_MACRO(name ## _lower, &kp L0 &kp L1 &kp L2 &kp L3) \
     UC_MACRO(name ## _upper, &kp U0 &kp U1 &kp U2 &kp U3) \
     UC_MODMORPH(name, &name ## _lower, &name ## _upper)
+
