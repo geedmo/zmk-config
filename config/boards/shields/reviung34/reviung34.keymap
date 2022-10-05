@@ -42,6 +42,10 @@
 
 #define CANCEL &mo DEFAULT
 
+
+// unicode ñ
+ZMK_UNICODE_SINGLE(uc_enie, N0, N0, F, 1)
+
 // combos
 //#undef COMBO_TERM
 //#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
@@ -129,10 +133,10 @@ ZMK_BEHAVIOR(ss_mailp, macro,
 
                 fun_layer {
                         bindings = <
-    _______    _______    _______    _______    _______    _______    _______    _______    _______    _______
-    _______    _______    _______    _______    _______    _______    _______    _______    _______    _______
-    _______    _______    _______    _______    _______    _______    _______    _______    _______    _______
-                                     _______    XXXXXXX    XXXXXXX    _______
+    XXXXXXX    &kp F1     &kp F2     &kp F3     &kp F4     XXXXXXX    XXXXXXX    &kp K_LOCK &kp PAUSE_BREAK  XXXXXXX
+    &kp F5     &kp F6     &kp F7     &kp F8     XXXXXXX    XXXXXXX    &sk LCTRL  XXXXXXX    &kp PSCRN        &uc_enie
+    &kp F9     &kp F10    &kp F11    &kp F12    XXXXXXX    XXXXXXX    &kp K_APP  XXXXXXX    XXXXXXX          XXXXXXX
+                                     CANCEL     XXXXXXX    XXXXXXX    _______
                         >;
                 };
 
