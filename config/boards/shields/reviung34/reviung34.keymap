@@ -99,9 +99,9 @@ ZMK_BEHAVIOR(td_cbrace, tap_dance,
 
                 sym_layer {
                         bindings = <
-    _______    &kc AT     &kc HASH   &kc DLR    &kc PRCNT  &kc CARET  &kc AMPS   &kc ASTRK  &td_parens   _______
-    &kc GRAVE  &kc DQT    _______    &kc EXCL   _______    _______    &kc MINUS  &kc EQUAL  &td_cbrace   &kc SEMI
-    &kc TILDE  &kc SQT    &kc BSLH   &kc PIPE   &sl MEDIA  &sl FUN    &kc UNDER  &kc PLUS   &td_bracket  &kc FSLH
+    _______    &kp AT     &kp HASH   &kp DLR    &kp PRCNT  &kp CARET  &kp AMPS   &kp ASTRK  &td_parens   _______
+    &kp GRAVE  &kp DQT    _______    &kp EXCL   _______    _______    &kp MINUS  &kp EQUAL  &td_cbrace   &kp SEMI
+    &kp TILDE  &kp SQT    &kp BSLH   &kp PIPE   &sl MEDIA  &sl FUN    &kp UNDER  &kp PLUS   &td_bracket  &kp FSLH
                                      _______    _______    _______    _______
                         >;
                 };
