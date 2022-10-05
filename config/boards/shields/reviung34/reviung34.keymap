@@ -17,8 +17,6 @@
 #define SYM 1
 #define NAV 2
 #define CONFIG 3
-// #define _LOWER 3
-// #define _RAISE 4
 #define FUN 5
 #define NUMPAD 6
 #define NUMWORD 7
@@ -40,20 +38,15 @@
 #define MCS(k) &mt LC(LSHFT) k
 #define MCA(k) &mt LC(LALT) k
 
+#define HYPR LS(LC(LA(LGUI)))
+#define MEH LS(LC(LALT))
+
 #define CANCEL &mo DEFAULT
 
+#include "./combos.dtsi"
 
-// unicode ñ
+// unicode
 ZMK_UNICODE_PAIR(n_tilde,   N0, N0, F, N1,   N0, N0, D, N1)
-
-// combos
-//#undef COMBO_TERM
-//#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
-ZMK_COMBO(combo_bspc,  &kp BSPC, RT2 RT3, ALL)
-ZMK_COMBO(combo_del,   &kp DEL, LT2 LT3, ALL)
-//ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)
-//ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)
-
 
 // tap dance
 ZMK_BEHAVIOR(td_parens, tap_dance,
@@ -133,9 +126,9 @@ ZMK_BEHAVIOR(ss_mailp, macro,
 
                 fun_layer {
                         bindings = <
-    XXXXXXX    &kp F1     &kp F2     &kp F3     &kp F4     XXXXXXX    XXXXXXX    &kp K_LOCK &kp PAUSE_BREAK  XXXXXXX
-    &kp F5     &kp F6     &kp F7     &kp F8     XXXXXXX    XXXXXXX    &sk LCTRL  XXXXXXX    &kp PSCRN        &n_tilde
-    &kp F9     &kp F10    &kp F11    &kp F12    XXXXXXX    XXXXXXX    &kp K_APP  XXXXXXX    XXXXXXX          XXXXXXX
+    XXXXXXX    &kp F1     &kp F2     &kp F3     &kp F4     XXXXXXX    XXXXXXX    &kp K_LOCK  &kp PAUSE_BREAK  XXXXXXX
+    &kp F5     &kp F6     &kp F7     &kp F8     XXXXXXX    XXXXXXX    &sk LCTRL  XXXXXXX     &kp PSCRN        &n_tilde
+    &kp F9     &kp F10    &kp F11    &kp F12    XXXXXXX    XXXXXXX    &kp K_APP  XXXXXXX     XXXXXXX          XXXXXXX
                                      CANCEL     XXXXXXX    XXXXXXX    _______
                         >;
                 };
