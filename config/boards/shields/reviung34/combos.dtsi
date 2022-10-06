@@ -8,20 +8,41 @@
                ╰─────────┴─────────╯             */
 
 // qmk friendly
-#define COMB(name, binding, keypos)  ZMK_COMBO(name, binding, keypos, ALL)
+#define COMB(name,       binding,    keypos)  ZMK_COMBO(name, binding, keypos, ALL)
 //#undef COMBO_TERM
 //#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
 
+#define NAVESC &lt NAV ESC
+#define FUNESC &lt FUN ESC
+
 // cancel all / reset to base layer
-COMB(C_cancel,           &kp CANCEL,    RB4     RM4)
+COMB(C_cancel,           &kp CANCEL, RB4 RM4)
 
 // hyper - meh
-COMB(C_hyper,            &kp HYPR,      LM4     LM3)
-COMB(C_meh,              &kp MEH,       RM3     RM4)
+COMB(C_hyper,            &kp HYPR,   LM4 LM3)
+COMB(C_meh,              &kp MEH,    RM3 RM4)
+
+// TAB x2
+COMB(C_tab_1,            &kp TAB,    LT2 LT1)
+COMB(C_tab_2,            &kp TAB,    RT1 RT2)
 
 // Text control
-COMB(C_bspc,             &kp BSPC,  RT2 RT3)
-COMB(C_del,              &kp DEL,   LT2 LT3)
-//ZMK_COMBO(combo_copy,  &kp LC(C), LB2 LB3, ALL)
-//ZMK_COMBO(combo_paste, &kp LC(V), LB1 LB2, ALL)
+COMB(C_backspace,        &kp BSPC,   RT2 RT3)
+COMB(C_del,              &kp DEL,    LT2 LT3)
+COMB(C_nav,              NAVESC,     LM2 LM1)
+COMB(C_esc_fun,          FUNESC,     LM2 LM1)
+COMB(C_enter_1,          &kp RET,    RM2 RM3)
+COMB(C_enter_2,          &kp RET,    LM3 LM2)
 
+//ZMK_COMBO(combo_copy,  &kp LC(C),  LB2 LB3,                 ALL)
+//ZMK_COMBO(combo_paste, &kp LC(V),  LB1 LB2,                 ALL)
+
+// left+right side combos
+/* COMB(C_emails,          EMAILS,         KC_R ,    KC_U) */
+/* COMB(C_wnav,            WNAV,           KC_D,     KC_K) */
+/* COMB(C_numpad,          NUMPAD,         HOME_V,   HOME_M) */
+/* COMB(C_numword,         NUMWORD,        LOWER,    NAVSPC) */
+/* COMB(C_caps,            KC_CAPS,        KC_X,     MOD_DOT) */
+/* COMB(C_mouse_1,         MOUSE,          KC_S,     KC_L) */
+/* COMB(C_mouse_2,         MOUSE,          MOD_LCS,  KC_R) */
+/* COMB(C_adjust,          ADJUST,         MOD_LCS,  MOD_RCS) */
