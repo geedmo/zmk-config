@@ -97,7 +97,7 @@ ZMK_BEHAVIOR(ss_mailp, macro,
             #binding-cells = <2>;
             tapping-term-ms = <200>;    // <---[[moderate duration]]
             quick-tap-ms = <100>;
-            flavor = "balanced";
+            flavor = "tap-preferred"; // flavor = "balanced";
             bindings = <&kp>, <&kp>;
             global-quick-tap;
         };
