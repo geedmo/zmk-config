@@ -15,16 +15,26 @@
 
 #define DEFAULT 0
 #define SYM 1
-#define NAV 2
-#define ADJUST 3
-#define FUN 5
-#define NUMPAD 6
-#define NUMWORD 7
-#define MEDIA 8
-#define MOUSE 9
-#define GAME 10
-#define WNAV 11
-#define EMAILS 12
+#define MEDIA 2
+#define FUN 3
+#define NAV 4
+#define NUMPAD 5
+#define WNAV 6
+#define EMAILS 7
+#define ADJUST 8
+
+/* #define DEFAULT 0 */
+/* #define SYM 1 */
+/* #define NAV 2 */
+/* #define ADJUST 3 */
+/* #define FUN 5 */
+/* #define NUMPAD 6 */
+/* #define NUMWORD 7 */
+/* #define MEDIA 8 */
+/* #define MOUSE 9 */
+/* #define GAME 10 */
+/* #define WNAV 11 */
+/* #define EMAILS 12 */
 
 #define XXXXXXX &none
 #define _______ &trans
