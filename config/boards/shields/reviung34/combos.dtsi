@@ -39,7 +39,7 @@ COMB(C_enter_2,          &kp RET,    LM3 LM2)
 
 // left+right side combos
 COMB(C_emails,          &mo EMAILS,         LT1 RT1)
-COMB(C_wnav,            &mo WNAV,           LM2 RM1)
+COMB(C_wnav,            &mo WNAV,           LM2 RM2)
 COMB(C_numpad,          &mo NUMPAD,         LB2 LB1)
 /* COMB(C_numword,         &mo NUMWORD,        LOWER,    NAVSPC) */
 /* COMB(C_caps,            &mo KC_CAPS,        LB3 RB3) */
