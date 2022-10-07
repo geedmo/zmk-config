@@ -99,7 +99,7 @@ ZMK_BEHAVIOR(ss_mailp, macro,
             quick-tap-ms = <100>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
-            // global-quick-tap; // <--- makes I'm really hard to type
+            global-quick-tap;
         };
     };
 
