@@ -30,7 +30,7 @@ COMB(C_tab_2,            &kp TAB,    RT1 RT2)
 COMB(C_backspace,        &kp BSPC,   RT2 RT3)
 COMB(C_del,              &kp DEL,    LT2 LT3)
 COMB(C_nav,              NAVESC,     LM2 LM1)
-COMB(C_esc_fun,          FUNESC,     LM2 LM1)
+COMB(C_esc_fun,          FUNESC,     RM2 RM1)
 COMB(C_enter_1,          &kp RET,    RM2 RM3)
 COMB(C_enter_2,          &kp RET,    LM3 LM2)
 
