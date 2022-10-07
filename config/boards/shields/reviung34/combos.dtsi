@@ -45,4 +45,4 @@ COMB(C_numpad,          &mo NUMPAD,         LB1 LB0)
 /* COMB(C_caps,            &mo KC_CAPS,        LB3 RB3) */
 /* COMB(C_mouse_1,         &mo MOUSE,          KC_S,     KC_L) */
 /* COMB(C_mouse_2,         &mo MOUSE,          MOD_LCS,  KC_R) */
-COMB(C_adjust,          &mo ADJUST,         LB4 RB4)
+COMB(C_adjust,          &sl ADJUST,         LB4 RB4)
