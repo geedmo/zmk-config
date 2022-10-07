@@ -38,11 +38,11 @@ COMB(C_enter_2,          &kp RET,    LM3 LM2)
 //ZMK_COMBO(combo_paste, &kp LC(V),  LB1 LB2,                 ALL)
 
 // left+right side combos
-/* COMB(C_emails,          EMAILS,         KC_R ,    KC_U) */
-/* COMB(C_wnav,            WNAV,           KC_D,     KC_K) */
-/* COMB(C_numpad,          NUMPAD,         HOME_V,   HOME_M) */
-/* COMB(C_numword,         NUMWORD,        LOWER,    NAVSPC) */
-/* COMB(C_caps,            KC_CAPS,        KC_X,     MOD_DOT) */
-/* COMB(C_mouse_1,         MOUSE,          KC_S,     KC_L) */
-/* COMB(C_mouse_2,         MOUSE,          MOD_LCS,  KC_R) */
-/* COMB(C_adjust,          ADJUST,         MOD_LCS,  MOD_RCS) */
+COMB(C_emails,          &mo EMAILS,         LT1 ,    RT1)
+COMB(C_wnav,            &mo WNAV,           LT2,     RT2)
+COMB(C_numpad,          &mo NUMPAD,         HOME_V,   HOMEM)
+/* COMB(C_numword,         &mo NUMWORD,        LOWER,    NAVSPC) */
+COMB(C_caps,            &mo KC_CAPS,        LB3,      RB3)
+/* COMB(C_mouse_1,         &mo MOUSE,          KC_S,     KC_L) */
+/* COMB(C_mouse_2,         &mo MOUSE,          MOD_LCS,  KC_R) */
+COMB(C_adjust,          &mo ADJUST,         LB4,      RB4)

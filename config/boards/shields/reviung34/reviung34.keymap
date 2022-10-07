@@ -16,7 +16,7 @@
 #define DEFAULT 0
 #define SYM 1
 #define NAV 2
-#define CONFIG 3
+#define ADJUST 3
 #define FUN 5
 #define NUMPAD 6
 #define NUMWORD 7
@@ -25,7 +25,6 @@
 #define GAME 10
 #define WNAV 11
 #define EMAILS 12
-#define ADJUST 13
 
 #define XXXXXXX &none
 #define _______ &trans
@@ -169,7 +168,7 @@ ZMK_BEHAVIOR(ss_mailp, macro,
                         >;
                 };
 
-                config_layer {
+                adjust_layer {
 // -----------------------------------------------------------------------------------------
 // | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ |    | BT1  | BT2 | BT3 | BT4 |
 // | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI+ |    | BT5   |       |     |     |
