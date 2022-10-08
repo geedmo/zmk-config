@@ -44,8 +44,8 @@
 #define MSFT(k) &hrm LSHFT k
 #define MCTL(k) &hrm LCTRL k
 #define MGUI(k) &hrm LGUI k
-#define MCS(k) &mt LC(LSHFT) k
-#define MCA(k) &mt LC(LALT) k
+#define MCS(k) &hrm LC(LSHFT) k
+#define MCA(k) &hrm LC(LALT) k
 
 #define HYPR LS(LC(LA(LGUI)))
 #define MEH LS(LC(LALT))
