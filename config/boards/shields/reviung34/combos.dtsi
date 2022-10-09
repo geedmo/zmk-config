@@ -9,10 +9,19 @@
 
 // qmk friendly
 #define COMB(name, binding, keypos) ZMK_COMBO(name, binding, keypos, ALL)
+
+#define COMB_MACRO(name, macro_binding, keypos) \
+    ZMK_BEHAVIOR(macro_ ## name, macro, \
+        wait-ms = <30>; \
+        tap-ms = <40>; \
+        bindings = <macro_binding>; \
+    ) \
+    COMB(name, &macro_ ## name, keypos)
+
 //#undef COMBO_TERM
 //#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
 
-#define KP_BOTHSYM(ko,kc) &kp ko &kc k &kp LEFT
+#define KP_BOTHSYM(ko,kc) &kp ko &kp kc &kp LEFT
 #define KP_BOTHPAREN KP_BOTHSYM(LPAR,RPAR)
 #define KP_BOTHCBR KP_BOTHSYM(LBKT,RBKT)
 #define KP_BOTHBRC KP_BOTHSYM(LBRC,RBRC)
@@ -20,13 +29,6 @@
 #define KP_BOTHDQUOTE KP_BOTHSYM(DQT,DQT)
 #define KP_BOTHSQUOTE KP_BOTHSYM(SQT,SQT)
 
-#define COMB_MACRO(name, macro_binding, keypos) \
-    ZMK_MACRO(macro_ ## name, \
-        wait-ms = <30>; \
-        tap-ms = <40>; \
-        bindings = <macro_binding>; \
-    ) \
-    ZMK_COMBO(name, &macro_ ## name, keypos, ALL)
 
 #define NAVESC &lt NAV ESC
 #define FUNESC &lt FUN ESC
