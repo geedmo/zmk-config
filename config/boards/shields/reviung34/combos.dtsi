@@ -83,8 +83,8 @@ COMB(cut,                &kp LC(X),     RB0 RB1)
 
 // Symbol pairs
 COMB_MACRO(bothparen,    KP_BOTHPAREN,  RT1 RT3)
-COMB(bothcbr,            KP_BOTHCBR,    RM1 RM3)
-COMB(bothbrc,            KP_BOTHBRC,    RB1 RB3)
-COMB(bothangle,          KP_BOTHANGLE,  RT1 RT3)
-COMB(bothdquote,         KP_BOTHDQUOTE, RM1 RM3)
-COMB(bothsquote,         KP_BOTHSQUOTE, RB1 RB3)
+COMB_MACRO(bothcbr,      KP_BOTHCBR,    RM1 RM3)
+COMB_MACRO(bothbrc,      KP_BOTHBRC,    RB1 RB3)
+COMB_MACRO(bothangle,    KP_BOTHANGLE,  RT1 RT3)
+COMB_MACRO(bothdquote,   KP_BOTHDQUOTE, RM1 RM3)
+COMB_MACRO(bothsquote,   KP_BOTHSQUOTE, RB1 RB3)
