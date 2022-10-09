@@ -20,6 +20,14 @@
 #define KP_BOTHDQUOTE KP_BOTHSYM(DQT,DQT)
 #define KP_BOTHSQUOTE KP_BOTHSYM(SQT,SQT)
 
+#define COMB_MACRO(name, macro_binding, keypos) \
+    ZMK_MACRO(macro_ ## name, \
+        wait-ms = <30>; \
+        tap-ms = <40>; \
+        bindings = <macro_binding>; \
+    ) \
+    ZMK_COMBO(name, &macro_ ## name, keypos, ALL)
+
 #define NAVESC &lt NAV ESC
 #define FUNESC &lt FUN ESC
 
@@ -70,9 +78,9 @@ COMB(copy,               &kp LC(INS),   RM0 RM1)
 COMB(cut,                &kp LC(X),     RB0 RB1)
 
 // Symbol pairs
-COMB(bothparen,          KP_BOTHPAREN,  RT1 RT3)
-COMB(bothcbr,            KP_BOTHCBR,    RM1 RM3)
-COMB(bothbrc,            KP_BOTHBRC,    RB1 RB3)
-COMB(bothangle,          KP_BOTHANGLE,  RT1 RT3)
-COMB(bothdquote,         KP_BOTHDQUOTE, RM1 RM3)
-COMB(bothsquote,         KP_BOTHSQUOTE, RB1 RB3)
+COMB_MACRO(bothparen,          KP_BOTHPAREN,  RT1 RT3)
+/* COMB(bothcbr,            KP_BOTHCBR,    RM1 RM3) */
+/* COMB(bothbrc,            KP_BOTHBRC,    RB1 RB3) */
+/* COMB(bothangle,          KP_BOTHANGLE,  RT1 RT3) */
+/* COMB(bothdquote,         KP_BOTHDQUOTE, RM1 RM3) */
+/* COMB(bothsquote,         KP_BOTHSQUOTE, RB1 RB3) */
