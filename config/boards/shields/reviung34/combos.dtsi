@@ -65,9 +65,9 @@ COMB(C_beg,              &kp CARET,     RB1 RB2)
 COMB(C_end,              &kp DLLR,      RB1 RB3)
 
 // copy/cut/paste
-COMB(paste,              LS(&kp INS),   RT0 RT1)
-COMB(copy,               LC(&kp INS),   RM0 RM1)
-COMB(cut,                LC(&kp X),     RB0 RB1)
+COMB(paste,              &kp LS(INS),   RT0 RT1)
+COMB(copy,               &kp LC(INS),   RM0 RM1)
+COMB(cut,                &kp LC(X),     RB0 RB1)
 
 // Symbol pairs
 COMB(bothparen,          KP_BOTHPAREN,  RT1 RT3)
