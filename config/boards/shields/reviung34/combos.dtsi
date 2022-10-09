@@ -126,7 +126,7 @@ COMB_MACRO(sc_save_file,    SC_SAVE_FILE,          RM2 RB3)
 COMB_MACRO(sc_tog_buffer,   SC_TOG_BUFFER,         RB1 RM2)
 
 // alt/tab app swithcing
-#define SW_WIN &kt LA(TAB)
+#define SW_WIN &kt LALT &kp TAB
 COMB_MACRO(app_swap,      SW_WIN,  RT1 RT2 RT3)
 /* COMB(C_alt_tab_r,       A(KC_TAB),      HOME_J,   KC_K,   KC_L) */
 /* COMB(C_app_swap_l,      SW_WIN,         HOME_W,   KC_E,   KC_R) */
