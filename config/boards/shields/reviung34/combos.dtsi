@@ -35,12 +35,12 @@
 #define EMACS_LEADER &kp LC(SPACE)
 #define SC_SPLIT_WIN &kp LC(X) &kp 3
 #define SC_DELETE_WIN &kp LC(X) &kp 0
-#define SC_FIND_FILE EMACS_LEADER &kp f &kp f
-#define SC_SWOOP EMACS_LEADER &kp s &kp s
-#define SC_SAVE_FILE EMACS_LEADER &kp f &kp s
-#define SC_FIND_BUFFER EMACS_LEADER &kp b &kp b
+#define SC_FIND_FILE EMACS_LEADER &kp F &kp F
+#define SC_SWOOP EMACS_LEADER &kp S &kp S
+#define SC_SAVE_FILE EMACS_LEADER &kp F &kp S
+#define SC_FIND_BUFFER EMACS_LEADER &kp B &kp B
 #define SC_TOG_BUFFER EMACS_LEADER &kp TAB
-#define SC_CLOSE_BUFFER EMACS_LEADER &kp b &kp d
+#define SC_CLOSE_BUFFER EMACS_LEADER &kp B &kp D
 
 // Layer toggles
 #define NAVESC &lt NAV ESC
