@@ -21,7 +21,9 @@
 //#undef COMBO_TERM
 //#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
 
+// write open/close symbol and place cursor in between
 #define KP_BOTHSYM(ko,kc) &kp ko &kp kc &kp LEFT
+// dual symbol definitions
 #define KP_BOTHPAREN KP_BOTHSYM(LPAR,RPAR)
 #define KP_BOTHCBR KP_BOTHSYM(LBKT,RBKT)
 #define KP_BOTHBRC KP_BOTHSYM(LBRC,RBRC)
@@ -80,9 +82,9 @@ COMB(copy,               &kp LC(INS),   RM0 RM1)
 COMB(cut,                &kp LC(X),     RB0 RB1)
 
 // Symbol pairs
-COMB_MACRO(bothparen,          KP_BOTHPAREN,  RT1 RT3)
-/* COMB(bothcbr,            KP_BOTHCBR,    RM1 RM3) */
-/* COMB(bothbrc,            KP_BOTHBRC,    RB1 RB3) */
-/* COMB(bothangle,          KP_BOTHANGLE,  RT1 RT3) */
-/* COMB(bothdquote,         KP_BOTHDQUOTE, RM1 RM3) */
-/* COMB(bothsquote,         KP_BOTHSQUOTE, RB1 RB3) */
+COMB_MACRO(bothparen,    KP_BOTHPAREN,  RT1 RT3)
+COMB(bothcbr,            KP_BOTHCBR,    RM1 RM3)
+COMB(bothbrc,            KP_BOTHBRC,    RB1 RB3)
+COMB(bothangle,          KP_BOTHANGLE,  RT1 RT3)
+COMB(bothdquote,         KP_BOTHDQUOTE, RM1 RM3)
+COMB(bothsquote,         KP_BOTHSQUOTE, RB1 RB3)
