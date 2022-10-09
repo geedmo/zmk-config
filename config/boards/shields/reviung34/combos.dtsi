@@ -8,41 +8,71 @@
                ╰─────────┴─────────╯             */
 
 // qmk friendly
-#define COMB(name,       binding,    keypos)  ZMK_COMBO(name, binding, keypos, ALL)
+#define COMB(name, binding, keypos) ZMK_COMBO(name, binding, keypos, ALL)
 //#undef COMBO_TERM
 //#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
+
+#define KP_BOTHSYM(ko,kc) &kp ko &kc k &kp LEFT
+#define KP_BOTHPAREN KP_BOTHSYM((,))
+#define KP_BOTHCBR KP_BOTHSYM({,})
+#define KP_BOTHBRC KP_BOTHSYM([,])
+#define KP_BOTHANGLE KP_BOTHSYM(<,>)
+#define KP_BOTHDQUOTE KP_BOTHSYM(\",\")
+#define KP_BOTHSQUOTE KP_BOTHSYM(',')
 
 #define NAVESC &lt NAV ESC
 #define FUNESC &lt FUN ESC
 
 // cancel all / reset to base layer
-COMB(C_cancel,           &kp CANCEL, RB4 RM4)
+COMB(C_cancel,           &kp CANCEL,    RB4 RM4)
 
 // hyper - meh
-COMB(C_hyper,            &kp HYPR,   LM4 LM3)
-COMB(C_meh,              &kp MEH,    RM3 RM4)
+COMB(C_hyper,            &kp HYPR,      LM4 LM3)
+COMB(C_meh,              &kp MEH,       RM3 RM4)
 
 // TAB x2
-COMB(C_tab_1,            &kp TAB,    LT2 LT1)
-COMB(C_tab_2,            &kp TAB,    RT1 RT2)
+COMB(C_tab_1,            &kp TAB,       LT2 LT1)
+COMB(C_tab_2,            &kp TAB,       RT1 RT2)
 
 // Text control
-COMB(C_backspace,        &kp BSPC,   RT2 RT3)
-COMB(C_del,              &kp DEL,    LT2 LT3)
-COMB(C_nav,              NAVESC,     LM2 LM1)
-COMB(C_esc_fun,          FUNESC,     RM2 RM1)
-COMB(C_enter_1,          &kp RET,    RM2 RM3)
-COMB(C_enter_2,          &kp RET,    LM3 LM2)
+COMB(C_backspace,        &kp BSPC,      RT2 RT3)
+COMB(C_del,              &kp DEL,       LT2 LT3)
+COMB(C_nav,              NAVESC,        LM2 LM1)
+COMB(C_esc_fun,          FUNESC,        RM2 RM1)
+COMB(C_enter_1,          &kp RET,       RM2 RM3)
+COMB(C_enter_2,          &kp RET,       LM3 LM2)
 
-//ZMK_COMBO(combo_copy,  &kp LC(C),  LB2 LB3,                 ALL)
-//ZMK_COMBO(combo_paste, &kp LC(V),  LB1 LB2,                 ALL)
+//ZMK_COMBO(combo_copy,  &kp LC(C),     LB2 LB3, ALL)
+//ZMK_COMBO(combo_paste, &kp LC(V),     LB1 LB2, ALL)
 
 // left+right side combos
-COMB(C_emails,          &sl EMAILS,         LT1 RT1)
-COMB(C_wnav,            &sl WNAV,           LM2 RM2)
-COMB(C_numpad,          &sl NUMPAD,         LB2 LB1)
-/* COMB(C_numword,         &mo NUMWORD,        LOWER,    NAVSPC) */
-/* COMB(C_caps,            &mo KC_CAPS,        LB3 RB3) */
-/* COMB(C_mouse_1,         &mo MOUSE,          KC_S,     KC_L) */
-/* COMB(C_mouse_2,         &mo MOUSE,          MOD_LCS,  KC_R) */
-COMB(C_adjust,          &sl ADJUST,         LB4 RB4)
+COMB(C_emails,           &sl EMAILS,    LT1 RT1)
+COMB(C_wnav,             &sl WNAV,      LM2 RM2)
+COMB(C_numpad,           &sl NUMPAD,    LB2 LB1)
+/* COMB(C_numword,       &mo NUMWORD,   LOWER,   NAVSPC) */
+/* COMB(C_caps,          &mo KC_CAPS,   LB3 RB3) */
+/* COMB(C_mouse_1,       &mo MOUSE,     KC_S,    KC_L) */
+/* COMB(C_mouse_2,       &mo MOUSE,     MOD_LCS, KC_R) */
+COMB(C_adjust,           &sl ADJUST,    LB4 RB4)
+
+// proposals
+// ---------
+// COMB(C_evilnav,       KC_NO,         KC_D,    HOME_V)
+// COMB(C_evilnav,       KC_NO,         KC_D,    KC_X)
+
+// vim helpers
+COMB(C_beg,              &kp CARET,     RB1 RB2)
+COMB(C_end,              &kp DLLR,      RB1 RB3)
+
+// copy/cut/paste
+COMB(paste,              LS(&kp INS),   RT0 RT1)
+COMB(copy,               LC(&kp INS),   RM0 RM1)
+COMB(cut,                LC(&kp X),     RB0 RB1)
+
+// Symbol pairs
+COMB(bothparen,          KP_BOTHPAREN,  RT1 RT3)
+COMB(bothcbr,            KP_BOTHCBR,    RM1 RM3)
+COMB(bothbrc,            KP_BOTHBRC,    RB1 RB3)
+COMB(bothangle,          KP_BOTHANGLE,  RT1 RT3)
+COMB(bothdquote,         KP_BOTHDQUOTE, RM1 RM3)
+COMB(bothsquote,         KP_BOTHSQUOTE, RB1 RB3)
