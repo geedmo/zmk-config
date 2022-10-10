@@ -33,8 +33,8 @@
 
 // emacs shortcuts
 #define EMACS_LEADER &kp LC(SPACE)
-#define SC_SPLIT_WIN &kp LC(X) &kp 3
-#define SC_DELETE_WIN &kp LC(X) &kp 0
+#define SC_SPLIT_WIN &kp LC(X) &kp N3
+#define SC_DELETE_WIN &kp LC(X) &kp N0
 #define SC_FIND_FILE EMACS_LEADER &kp F &kp F
 #define SC_SWOOP EMACS_LEADER &kp S &kp S
 #define SC_SAVE_FILE EMACS_LEADER &kp F &kp S
