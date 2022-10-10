@@ -94,11 +94,11 @@ COMB(cut,                &kp LC(X),     RB0 RB1)
 
 // Symbol pairs
 COMB_MACRO(bothparen,    KP_BOTHPAREN,  RT1 RT3)
-COMB_MACRO(bothcbr,      KP_BOTHCBR,    RM1 RM3)
-COMB_MACRO(bothbrc,      KP_BOTHBRC,    RB1 RB3)
-COMB_MACRO(bothangle,    KP_BOTHANGLE,  RT1 RT3)
-COMB_MACRO(bothdquote,   KP_BOTHDQUOTE, RM1 RM3)
-COMB_MACRO(bothsquote,   KP_BOTHSQUOTE, RB1 RB3)
+COMB_MACRO(bothcbr,      KP_BOTHCBR,    RB1 RB3)
+COMB_MACRO(bothbrc,      KP_BOTHBRC,    RM1 RM3)
+COMB_MACRO(bothangle,    KP_BOTHANGLE,  LT1 LT3)
+COMB_MACRO(bothdquote,   KP_BOTHDQUOTE, LM1 LM3)
+COMB_MACRO(bothsquote,   KP_BOTHSQUOTE, LB1 LB3)
 
 // Symbols
 COMB(sym_minus,         &kp MINUS,       RT2 RM3)
