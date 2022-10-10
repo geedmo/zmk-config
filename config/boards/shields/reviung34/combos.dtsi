@@ -85,7 +85,7 @@ COMB(C_adjust,           &sl ADJUST,    LB4 RB4)
 
 // vim helpers
 COMB(C_beg,              &kp CARET,     RB1 RB2)
-COMB(C_end,              &kp DLLR,      RB1 RB3)
+COMB(C_end,              &kp DLLR,      RB2 RB3)
 
 // copy/cut/paste
 COMB(paste,              &kp LS(INS),   RT0 RT1)
@@ -123,7 +123,7 @@ COMB_MACRO(sc_find_buffer,  SC_FIND_BUFFER,          LT3 LM3)
 
 // diagonal combo
 COMB_MACRO(sc_save_file,    SC_SAVE_FILE,          RM2 RB3)
-COMB_MACRO(sc_tog_buffer,   SC_TOG_BUFFER,         RB1 RM2)
+COMB_MACRO(sc_tog_buffer,   SC_TOG_BUFFER,         RM2 RB1)
 
 // alt/tab app swithcing
 #define SW_WIN &kt LALT &kp TAB
