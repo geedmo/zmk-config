@@ -144,9 +144,9 @@ ZMK_BEHAVIOR(ss_mailp, macro,
 
                 nav_layer {
                         bindings = <
-    _______    &kp PG_DN  &kp UP     &kp PG_UP  _______    _______    &kp C(TAB) _______    &kp C(TAB) _______
-    &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  _______
-    &mo NAV    _______    _______    _______    _______    &kp INS    &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
+    _______    &kp PG_DN  &kp UP     &kp PG_UP  _______    _______    &kp LC(TAB) _______    &kp LC(TAB) _______
+    &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &kp LEFT   &kp DOWN    &kp UP     &kp RIGHT   _______
+    &mo NAV    _______    _______    _______    _______    &kp INS    &kp HOME    &kp PG_DN  &kp PG_UP   &kp END
                                      CANCEL     XXXXXXX    XXXXXXX    _______
                            >;
                 };
