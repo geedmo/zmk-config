@@ -122,8 +122,8 @@ COMB_MACRO(sc_find_file,    SC_FIND_FILE,          LT2 LM2)
 COMB_MACRO(sc_find_buffer,  SC_FIND_BUFFER,          LT3 LM3)
 
 // diagonal combo
-COMB_MACRO(sc_save_file,    SC_SAVE_FILE,          RM2 RB1)
-COMB_MACRO(sc_tog_buffer,   SC_TOG_BUFFER,         RM2 RB3)
+COMB_MACRO(sc_save_file,    SC_SAVE_FILE,          RM2 RB3)
+COMB_MACRO(sc_tog_buffer,   SC_TOG_BUFFER,         RM2 RB1)
 
 // alt/tab app swithcing
 #define SW_WIN &kt LALT &kp TAB
