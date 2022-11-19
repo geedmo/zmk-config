@@ -135,3 +135,7 @@ COMB(alt_tab_r,             &kp LA(TAB),     RM1 RM2 RM3)
 /* COMB_MACRO(app_swap_l,      &kt LALT,        LT1 LT2 LT3) */
 COMB_MACRO(app_swap_l,      &kt LA(ESC),     LT1 LT2 LT3)
 COMB(alt_tab_l,             &kp LA(TAB),     LM1 LM2 LM3)
+
+// right control
+COMB(C_rctrl_l,             &sk RCTRL,       LB4 LB3)
+COMB(C_rctrl_r,             &sk RCTRL,       RB3 RB4)
