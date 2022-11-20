@@ -22,6 +22,7 @@
 #define WNAV 6
 #define EMAILS 7
 #define ADJUST 8
+#define TNAV 9
 
 /* #define DEFAULT 0 */
 /* #define SYM 1 */
@@ -186,5 +187,15 @@ ZMK_BEHAVIOR(ss_mailp, macro,
                                            &kp CAPS        XXXXXXX XXXXXXX _______
                         >;
                 };
+
+               tnav_layer  {
+                        bindings = <
+    _______    _______        &kp RC(E)   &kp RC(R)   _______    &kp RC(LEFT) &kp RC(DOWN) &kp RC(UP) &kp RC(RIGHT) _______
+    &kp RC(N6) &kp RC(N4)     &kp RC(N0)  &kp RC(N2)  _______    _______      &kp RC(N3)   &kp RC(N1) &kp RC(N5)    &kp RC(N7)
+    _______    &kp RC(X)      _______     &kp RC(N8)  _______    _______      &kp RC(N9)   _______    _______       _______
+                                          CANCEL      XXXXXXX    XXXXXXX      _______
+                            >;
+                };
+
         };
 };
