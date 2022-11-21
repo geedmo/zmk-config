@@ -32,7 +32,7 @@
 #define KP_BOTHSQUOTE KP_BOTHSYM(SQT,SQT)
 
 // emacs shortcuts
-#define EMACS_LEADER &kp LC(SPACE)
+#define EMACS_LEADER &kp LS(SPACE)
 #define SC_SPLIT_WIN &kp LC(X) &kp N3
 #define SC_DELETE_WIN &kp LC(X) &kp N0
 #define SC_FIND_FILE EMACS_LEADER &kp F &kp F
