@@ -126,9 +126,9 @@ SS_BEHAVIOR(ss_mail_sl, &kp G &kp E &kp R &kp M &kp A &kp N &kp DOT &kp M &kp O 
                 default_layer {
                         label = "default";
                         bindings = <
-    XXXXXXX    MALT(W)    &kp E      &kp R        &kp T     &kp Y     &kp U            &kp I      MALT(O)    XXXXXXX
-    MSFT(A)    &kp S      &kp D      MCTL(F)      &kp G     &kp H     MCTL(J)          &kp K      &kp L      MSFT(P)
-    MCS(Q)     MCA(X)     &kp C      MGUI(V)      &kp B     &kp N     MGUI(M)          &kp COMMA  MCA(DOT)   MCS(Z)
+    XXXXXXX    MALT(W)    &kp E      MGUI(R)      MHYPR(T)   MMEH(Y)   MGUI(U)  &kp I      MALT(O)    XXXXXXX
+    MSFT(A)    &kp S      &kp D      MCTL(F)      &kp G      &kp H     MCTL(J)  &kp K      &kp L    MSFT(P)
+    MCS(Q)     MCA(X)     &kp C      &kp V        &kp B      &kp N     &kp M    &kp COMMA  MCA(DOT)   MCS(Z)
                                      &sl SYM      XXXXXXX   XXXXXXX   &lt NAV SPACE
                         >;
                 };
