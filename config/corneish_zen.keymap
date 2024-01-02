@@ -1,0 +1,231 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#include "../zmk-nodefree-config/keypos_def/keypos_34keys.h"
+#include "../zmk-nodefree-config/helper.h"
+
+#define DEFAULT 0
+#define SYM 1
+#define MEDIA 2
+#define FUN 3
+#define NAV 4
+#define NUMPAD 5
+#define WNAV 6
+#define EMAILS 7
+#define ADJUST 8
+#define TNAV 9
+
+/* #define DEFAULT 0 */
+/* #define SYM 1 */
+/* #define NAV 2 */
+/* #define ADJUST 3 */
+/* #define FUN 5 */
+/* #define NUMPAD 6 */
+/* #define NUMWORD 7 */
+/* #define MEDIA 8 */
+/* #define MOUSE 9 */
+/* #define GAME 10 */
+/* #define WNAV 11 */
+/* #define EMAILS 12 */
+
+#define XXXXXXX &none
+#define _______ &trans
+
+// Home row mods macros
+#define MALT(k) &hrm LALT k
+#define MSFT(k) &hrm LSHFT k
+#define MCTL(k) &hrm LCTRL k
+#define MGUI(k) &hrm LGUI k
+#define MCS(k) &hrm LC(LSHFT) k
+#define MCA(k) &hrm LC(LALT) k
+#define MHYPR(k) &hrm LS(LC(LA(LGUI))) k
+#define MMEH(k) &hrm LS(LC(LALT)) k
+
+#define HYPR LS(LC(LA(LGUI)))
+#define MEH LS(LC(LALT))
+
+#define CANCEL &mo DEFAULT
+
+#include "./combos.dtsi"
+
+// send string macros
+#define SS_BEHAVIOR(name, macro_bindings) \
+    ZMK_BEHAVIOR(name, macro, \
+        wait-ms = <30>; \
+        tap-ms = <40>; \
+        bindings = <macro_bindings>; \
+    )
+
+// unicode
+ZMK_UNICODE_PAIR(n_tilde,   N0, N0, F, N1,   N0, N0, D, N1)
+
+// tap dance
+ZMK_BEHAVIOR(td_parens, tap_dance,
+    tapping-term-ms = <250>;
+    bindings = <&kp LPAR>, <&kp RPAR>;
+)
+ZMK_BEHAVIOR(td_bracket, tap_dance,
+    tapping-term-ms = <250>;
+    bindings = <&kp LBKT>, <&kp RBKT>;
+)
+ZMK_BEHAVIOR(td_cbrace, tap_dance,
+    tapping-term-ms = <250>;
+    bindings = <&kp LBRC>, <&kp RBRC>;
+)
+ZMK_BEHAVIOR(td_dotcom, tap_dance,
+    tapping-term-ms = <250>;
+    bindings = <&kp DOT>, <&kp COMMA>;
+)
+
+// enable auto repeat on layer-tap
+&lt {
+    quick-tap-ms = <200>;
+};
+
+// send string macros
+SS_BEHAVIOR(ss_mailp, &kp M &kp O &kp R &kp A &kp L &kp E &kp S &kp DOT &kp G &kp E &kp R &kp M &kp A &kp N &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M)
+SS_BEHAVIOR(ss_mail_themicon, &kp T &kp H &kp E &kp M &kp I &kp C &kp O &kp N &kp DOT &kp C &kp O &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M)
+SS_BEHAVIOR(ss_mail_geedmo, &kp G &kp E &kp E &kp D &kp M &kp O &kp DOT &kp D &kp S &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M)
+SS_BEHAVIOR(ss_mail_goodb, &kp G &kp O &kp O &kp D &kp F &kp O &kp R &kp T &kp H &kp E &kp B &kp L &kp O &kp O &kp D &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M)
+SS_BEHAVIOR(ss_mail_mmm, &kp G &kp E &kp R &kp M &kp A &kp N &kp DOT &kp M &kp O &kp R &kp A &kp L &kp E &kp S &kp AT &kp M &kp M &kp M &kp H &kp C &kp DOT &kp C &kp O &kp M)
+SS_BEHAVIOR(ss_mail_sl, &kp G &kp E &kp R &kp M &kp A &kp N &kp DOT &kp M &kp O &kp R &kp A &kp L &kp E &kp S &kp AT &kp S &kp M &kp A &kp R &kp T &kp L &kp O &kp G &kp I &kp X &kp P &kp R &kp DOT &kp C &kp O &kp M)
+
+/ {
+    chosen {
+      zmk,matrix_transform = &five_column_transform;
+    };
+
+    macros {
+            ZMK_MACRO(save,
+              wait-ms = <30>;
+              tap-ms = <40>;
+              bindings =  <&macro_tap &kp ESC &kp COLON &kp W &kp RET>;
+            )
+    };
+
+    behaviors {
+        hrm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+                        label = "default";
+                        bindings = <
+    XXXXXXX    MALT(W)    &kp E      MGUI(R)      MHYPR(T)   MMEH(Y)   MGUI(U)  &kp I      MALT(O)    XXXXXXX
+    MSFT(A)    &kp S      &kp D      MCTL(F)      &kp G      &kp H     MCTL(J)  &kp K      &kp L    MSFT(P)
+    MCS(Q)     MCA(X)     &kp C      &kp V        &kp B      &kp N     &kp M    &kp COMMA  MCA(DOT)   MCS(Z)
+                          XXXXXXX    XXXXXXX      &sl SYM    &lt NAV   SPACE   XXXXXXX    XXXXXXX
+                        >;
+                };
+           
+                sym_layer {
+                        label = "sym";
+                        bindings = <
+    _______    &kp AT     &kp HASH   &kp DLLR   &kp PRCNT  &kp CARET  &kp AMPS   &kp ASTRK  &td_parens   _______
+    &kp GRAVE  &kp DQT    _______    &kp EXCL   _______    _______    &kp MINUS  &kp EQUAL  &td_cbrace   &kp SEMI
+    &kp TILDE  &kp SQT    &kp BSLH   &kp PIPE   &sl MEDIA  &sl FUN    &kp UNDER  &kp PLUS   &td_bracket  &kp FSLH
+                          XXXXXXX    XXXXXXX     CANCEL    _______    XXXXXXX    XXXXXXX
+                        >;
+                };
+
+                media_layer {
+                        label = "media";
+                        bindings = <
+    _______    _______    _______    &kp C_BRI_UP  _______     _______     _______       _______        _______      _______
+    _______    _______    _______    &kp C_BRI_DN  _______     &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP   &kp C_NEXT   &kp C_STOP
+    _______    _______    _______    _______       _______     _______     _______       _______        _______      _______
+                          XXXXXXX    XXXXXXX       &kp C_NEXT  &kp C_PP    XXXXXXX       XXXXXXX
+                            >;
+                };
+
+                fun_layer {
+                        label = "fun";
+                        bindings = <
+    XXXXXXX    &kp F1     &kp F2     &kp F3     &kp F4     XXXXXXX    XXXXXXX    &kp K_LOCK  &kp PAUSE_BREAK  XXXXXXX
+    &kp F5     &kp F6     &kp F7     &kp F8     XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX     &kp PSCRN        &n_tilde
+    &kp F9     &kp F10    &kp F11    &kp F12    XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX     &kp K_APP        &sk RCTRL
+                          XXXXXXX    XXXXXXX    CANCEL     _______    XXXXXXX    XXXXXXX
+                        >;
+                };
+
+                nav_layer {
+                        label = "nav";
+                        bindings = <
+    _______    &kp PG_DN  &kp UP     &kp PG_UP  _______    _______    &kp LC(LS(TAB)) _______    &kp LC(TAB) _______
+    &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &kp LEFT   &kp DOWN        &kp UP     &kp RIGHT   _______
+    &mo NAV    _______    _______    _______    _______    &kp INS    &kp HOME        &kp PG_DN  &kp PG_UP   &kp END
+                          XXXXXXX    XXXXXXX    CANCEL     _______    XXXXXXX         XXXXXXX
+                           >;
+                };
+
+               numpad_layer  {
+                        label = "numpad";
+                        bindings = <
+    _______    _______   _______   _______   _______   &kp KP_NUMLOCK    &kp KP_N7  &kp KP_N8  &kp KP_N9  _______
+    _______    _______   _______   _______   _______   &kp KP_PLUS       &kp KP_N4  &kp KP_N5  &kp KP_N6  &td_dotcom
+    &mo NUMPAD _______   _______   _______   _______   &kp KP_ASTERISK   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp FSLH
+                         XXXXXXX   XXXXXXX   CANCEL    &kp KP_N0         XXXXXXX    XXXXXXX
+                        >;
+                };
+
+               wnav_layer  {
+                        label = "wnav";
+                        bindings = <
+    _______    &kp LA(TAB)    &kp LG(TAB)  _______    _______    &kp LG(LEFT) &kp LG(DOWN) &kp LG(UP) &kp LG(RIGHT) _______
+    &kp LG(N6) &kp LG(N4)     &kp LG(N0)   &kp LG(N2) _______    _______      &kp LG(N3)   &kp LG(N1) &kp LG(N5)    &kp LG(N7)
+    _______    _______        _______      &kp LG(N8) _______    _______      &kp LG(N9)   _______    _______       _______
+                              XXXXXXX      XXXXXXX    CANCEL     _______      XXXXXXX      XXXXXXX
+                            >;
+                };
+
+               emails_layer  {
+                        label = "emails";
+                        bindings = <
+    _______    &ss_mail_geedmo  _______    _______    &ss_mail_themicon  _______   &ss_mailp      _______    _______   _______
+    _______    &ss_mail_sl      _______    _______    &ss_mail_goodb     _______   _______        _______    _______   &ss_mailp
+    _______    _______          _______    _______    _______            _______   &ss_mail_mmm   _______    _______   _______
+                                XXXXXXX    XXXXXXX    _______            _______   XXXXXXX        XXXXXXX
+                        >;
+                };
+
+                adjust_layer {
+                        label = "adjust";
+                        bindings = <
+   _______ &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF _______   _______ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  _______
+   _______ &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR _______   _______ &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_PRV    &bt BT_NXT
+   _______ &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_TOG _______   _______ &bt BT_CLR   _______      &out OUT_TOG  &bootloader
+                           XXXXXXX         XXXXXXX         &kp CAPS  _______ XXXXXXX      XXXXXXX
+                        >;
+                };
+
+               tnav_layer  {
+                        label = "tnav";
+                        bindings = <
+    _______    _______        &kp RC(E)   &kp RC(R)   _______    &kp RC(LEFT) &kp RC(DOWN) &kp RC(UP) &kp RC(RIGHT) _______
+    &kp RC(N6) &kp RC(N4)     &kp RC(N0)  &kp RC(N2)  _______    _______      &kp RC(N3)   &kp RC(N1) &kp RC(N5)    &kp RC(N7)
+    _______    &kp RC(X)      _______     &kp RC(N8)  _______    _______      &kp RC(N9)   _______    _______       _______
+                              XXXXXXX     XXXXXXX     CANCEL     _______      XXXXXXX      XXXXXXX
+                            >;
+                };
+
+        };
+};
